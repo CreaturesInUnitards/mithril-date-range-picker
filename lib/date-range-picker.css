@@ -1,0 +1,223 @@
+.date-range {
+    position: relative;
+}
+
+.date-range-input {
+    height: 40px;
+    width: 160px;
+    border-radius: 3px;
+    border: 1px solid #36455e;
+    border-bottom: 2px solid #263651;
+    padding: 5px 10px;
+}
+
+.date-range-input:focus, .date-range-input.focus {
+    outline: none;
+    background: lightcyan;
+    border-color: lavender;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translate(-50%, 5%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, 10%);
+    }
+}
+
+@keyframes fadeOutUp {
+    from {
+        opacity: 1;
+        transform: translate(-50%, 10%);
+    }
+    to {
+        opacity: 0;
+        transform: translate(-50%, 5%);
+    }
+}
+
+.calendar-display.fade-out {
+    animation: fadeOutUp .2s forwards
+}
+
+.calendar-display {
+    width: 800px;
+    height: 400px;
+    padding: 20px;
+    background: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border: 1px solid grey;
+    border-radius: 3px;
+    transform: translate(-50%, 10%);
+    animation: fadeInDown .2s forwards;
+    
+}
+
+.months-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 20px;
+    overflow: hidden;
+    height: 95%;
+}
+
+.calendar-display:before {
+    position:absolute;
+    content:"";
+    width:0px;
+    height:0px;
+    border-top: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #fff;
+    border-left: 10px solid transparent;
+    top:-19px;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: 50;
+}
+
+.calendar-display:after {
+    position:absolute;
+    content:"";
+    width:0px;
+    height:0px;
+    border-top: 11px solid transparent;
+    border-right: 11px solid transparent;
+    border-bottom: 11px solid #979797;
+    border-left: 11px solid transparent;
+    top:-22px;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: 25;
+}
+
+.month {
+    text-align: center;
+    font-family: sans-serif;
+    height: 308px;
+}
+
+@keyframes slideLeft {
+    from {
+        transform: translate(0, 0);
+    }
+    to {
+        transform: translate(-105.5%, 0);
+    }
+}
+
+.months-container.left .month {
+    animation: slideLeft .3s forwards
+}
+
+@keyframes slideRight {
+    from {
+        transform: translate(0, 0);
+    }
+    to {
+        transform: translate(105.5%, 0);
+    }
+}
+
+.months-container.right .month {
+    animation: slideRight .3s forwards
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translate(-109%, -100%);
+    }
+    to {
+        transform: translate(0%, -100%);
+    }
+}
+
+.months-container.right .month:nth-child(3) {
+    transform: translate(-110%, -100%);
+    animation: slideInRight .3s
+}
+
+.months-container.right .month:nth-child(4) {
+    display: none;
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translate(221%, -100%);
+    }
+    to {
+        transform: translate(105%, -100%);
+    }
+}
+
+.months-container.left .month:nth-child(4) {
+    transform: translate(210%, -100%);
+    animation: slideInLeft .3s
+}
+
+.months-container.left .month:nth-child(3) {
+    display: none;
+}
+
+.previous-month {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    border: 0;
+    background: blue;
+    color: white;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.next-month {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: 0;
+    background: blue;
+    color: white;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.days {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10px, 1fr));
+    background: lavender;
+    margin-bottom: 15px;
+}
+
+.day {
+    padding: 10px;
+}
+
+.dates {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.date {
+    padding: 10px;
+}
+
+.date.arrival {
+    background: lightcyan;
+}
+
+.date.departure {
+    background: lightcyan;
+}
+.date.selected {
+    background: lightcyan;
+}
+
+.date:hover {
+    background: cyan;
+    cursor: pointer;
+}
