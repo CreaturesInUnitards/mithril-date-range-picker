@@ -99,7 +99,8 @@
 .month {
     text-align: center;
     font-family: sans-serif;
-    height: 308px;
+    height: 350px;
+    background: #fff;
 }
 
 @keyframes slideLeft {
@@ -173,6 +174,7 @@
     color: white;
     padding: 5px 10px;
     cursor: pointer;
+    z-index: 75;
 }
 
 .next-month {
@@ -184,6 +186,7 @@
     color: white;
     padding: 5px 10px;
     cursor: pointer;
+    z-index: 75;
 }
 
 .days {
@@ -220,4 +223,14 @@
 .date:hover {
     background: cyan;
     cursor: pointer;
+}
+
+.year {
+    font-family: sans-serif;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%);
+    font-size: 22px;
+    color: lightgrey;
+    z-index: 100;
 }
