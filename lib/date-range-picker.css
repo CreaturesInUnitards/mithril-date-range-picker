@@ -96,7 +96,7 @@
     }
 }
 
-.months-container.left .month {
+.month.out-left {
     animation: slideLeft .3s forwards
 }
 
@@ -109,7 +109,7 @@
     }
 }
 
-.months-container.right .month {
+.month.out-right {
     animation: slideRight .3s forwards
 }
 
@@ -122,12 +122,12 @@
     }
 }
 
-.months-container.right .month:nth-child(3) {
+.months-container.in-right .month:nth-child(3) {
     transform: translate(-110%, -100%);
     animation: slideInRight .3s
 }
 
-.months-container.right .month:nth-child(4) {
+.months-container.in-right .month:nth-child(4) {
     display: none;
 }
 
@@ -140,13 +140,14 @@
     }
 }
 
-.months-container.left .month:nth-child(4) {
-    transform: translate(210%, -100%);
-    animation: slideInLeft .3s
+.months-container.in-left .month:nth-child(3) {
+    display: none;
 }
 
-.months-container.left .month:nth-child(3) {
-    display: none;
+
+.months-container.in-left .month:nth-child(4) {
+    transform: translate(210%, -100%);
+    animation: slideInLeft .3s
 }
 
 .month-navigation {
