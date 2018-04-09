@@ -210,7 +210,7 @@
     z-index:20;
 }
 
-.year {
+.year-container {
     font-family: sans-serif;
     left: 50%;
     position: absolute;
@@ -218,6 +218,19 @@
     font-size: 22px;
     color: lightgrey;
     z-index: 100;
+}
+
+.year-container > * {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.year-previous {
+    margin-right: 5px;
+}
+
+.year-next {
+    margin-left: 5px;
 }
 
 .date.initial-date .shape {
@@ -236,16 +249,15 @@
 }
 
 .date.first-date .shape {
-    height: 37px;
-    width: 37px;
+    height: 50px;
+    width: 50px;
     position: absolute;
     background: darkcyan;
-    left: 8px;
+    left: -11px;
     -webkit-transform: rotate(45deg);
     transform: rotate(45deg);
-    top: 0px;
+    top: -6px;
     z-index: 10;
-    border-bottom-left-radius: 27px;
 }
 
 .date.first-date .bg{
@@ -258,16 +270,15 @@
 }
 
 .date.second-date .shape{
-    height: 37px;
-    width: 37px;
+    height: 50px;
+    width: 50px;
     position: absolute;
     background: darkcyan;
-    left: 8px;
+    left: 11px;
     -webkit-transform: rotate(45deg);
     transform: rotate(45deg);
-    top: 0px;
+    top: -6px;
     z-index: 10;
-    border-top-right-radius: 27px;
 }
 
 .date.second-date .bg{
