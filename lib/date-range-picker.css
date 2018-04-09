@@ -195,22 +195,19 @@
 
 .date {
     padding: 10px;
-}
-
-.date.arrival {
-    background: lightcyan;
-}
-
-.date.departure {
-    background: lightcyan;
-}
-.date.selected {
-    background: lightcyan;
-}
-
-.date:hover {
-    background: cyan;
     cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.date.initial-date {
+    background: lightcyan;
+    
+}
+
+.date .number {
+    position: relative;
+    z-index:20;
 }
 
 .year {
@@ -221,4 +218,63 @@
     font-size: 22px;
     color: lightgrey;
     z-index: 100;
+}
+
+.date.initial-date .shape {
+    height: 37px;
+    width: 37px;
+    position: absolute;
+    background: cyan;
+    left: 8px;
+    transform: rotate(45deg);
+    top: 0px;
+    z-index: 10;
+}
+
+.date.in-between {
+    background: cyan
+}
+
+.date.first-date .shape {
+    height: 37px;
+    width: 37px;
+    position: absolute;
+    background: darkcyan;
+    left: 8px;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    top: 0px;
+    z-index: 10;
+    border-bottom-left-radius: 27px;
+}
+
+.date.first-date .bg{
+    position: absolute;
+    right: 0;
+    width: 50%;
+    background: cyan;
+    height: 100%;
+    top: 0;
+}
+
+.date.second-date .shape{
+    height: 37px;
+    width: 37px;
+    position: absolute;
+    background: darkcyan;
+    left: 8px;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    top: 0px;
+    z-index: 10;
+    border-top-right-radius: 27px;
+}
+
+.date.second-date .bg{
+    position: absolute;
+    left: 0;
+    width: 50%;
+    background: cyan;
+    height: 100%;
+    top: 0;
 }
